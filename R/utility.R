@@ -15,6 +15,13 @@ isCorrectedDate <- function(date){
   }
 }
 
+#' Wrong Date Values
+#'
+#' Input is a vector of integer/string values
+#' @param date: a vector of integer/string values
+#' @description Returns the wrong date values and their indexes.
+#' @return a data frame contains two columns; WrongValues is a vector contains the wrong values, and WrongIndexes contains the indexes of the wrong values
+#' @export
 wrongDateValues<-function(date) {
   dt<-strptime(date, "%Y%m%d")
   bad<-which(is.na(dt))
