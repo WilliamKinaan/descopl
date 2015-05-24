@@ -12,7 +12,4 @@ doesItContainNullValues(data)
 \description{
 check if all the values in the vector are not null
 }
-\examples{
-doesItContainNullValues(c(c(1:2), NA)) and the answe is TRUE, doesItContainNullValues(c(1:2)) and the answer is FALSE
-}
 
