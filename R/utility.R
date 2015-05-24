@@ -133,8 +133,3 @@ notExistedValues <- function(foreignKeys, primaryKeys){
   return (foreignKeys[!differencesBooleanVector])
 }
 
-
-doesItContainNullValues <- function(data){
-  booleanVector <- lapply(data, is.na);
-  return (!all(booleanVector == FALSE))
-}
