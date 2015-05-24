@@ -1,6 +1,6 @@
 #' Is Correct Date
 #'
-#' Input is a vector of integer/string values
+#' Input is a vector of integer/string values to be validated
 #' @param date: a vector of integer/string values
 #' @description Check if all the values of the input vectors have this format %Y%m%d
 #' @return TRUE if all the values of the vector have the correct format, and otherwise it returns FALSE
@@ -38,6 +38,13 @@ isCorrectDateTime <- function(dateTime){
   }
 }
 
+#' Is Correct Time
+#'
+#' Input is a vector of integer/string values to be validated
+#' @param date: a vector of integer/string values
+#' @description Check if all the values of the input vectors have this format %H%M
+#' @return TRUE if all the values of the vector have the correct format, and otherwise it returns FALSE
+#' @export 
 isCorrectTime <- function(time){
   dt <- strptime(time, "%H%M")
   bad <- which(is.na(dt))
@@ -48,6 +55,14 @@ isCorrectTime <- function(time){
   }
 }
 
+
+#' Wrong Time Values
+#'
+#' Input is a vector of integer/string values
+#' @param date: a vector of integer/string values
+#' @description Returns the wrong time values and their indexes.
+#' @return a data frame contains two columns; WrongValues is a vector contains the wrong values, and WrongIndexes contains the indexes of the wrong values
+#' @export
 wrongTimeValues <- function(time){
   dt<-strptime(time, " %H%M")
   bad<-which(is.na(dt))
