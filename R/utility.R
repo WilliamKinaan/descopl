@@ -92,7 +92,7 @@ areValuesExisted <- function (foriegnKeys, primaryKeys){
 
 
 notExistedValues <- function(foreignKeys, primaryKeys){
-  differencesBooleanVector <- foreignKeys %in% primaryKeys
-  return (foreignKeys[!differencesBooleanVector])
+  differencesBooleanVector1 <- foreignKeys %in% primaryKeys
+  return (foreignKeys[!differencesBooleanVector1])
 }
 
