@@ -41,7 +41,7 @@ isCorrectDateTime <- function(dateTime){
 #' Is Correct Time
 #'
 #' Input is a vector of integer/string values to be validated
-#' @param date: a vector of integer/string values
+#' @param time: a vector of integer/string values
 #' @description Check if all the values of the input vectors have this format %H%M
 #' @return TRUE if all the values of the vector have the correct format, and otherwise it returns FALSE
 #' @export 
@@ -59,7 +59,7 @@ isCorrectTime <- function(time){
 #' Wrong Time Values
 #'
 #' Input is a vector of integer/string values
-#' @param date: a vector of integer/string values
+#' @param time: a vector of integer/string values
 #' @description Returns the wrong time values and their indexes.
 #' @return a data frame contains two columns; WrongValues is a vector contains the wrong values, and WrongIndexes contains the indexes of the wrong values
 #' @export
@@ -73,6 +73,13 @@ lengthOfIntegerValue <- function(oneValue){
   return (nchar(as.character(oneValue)))
 }
 
+#' Is the length of all time values equal to three
+#'
+#' Input is a vector of integer/string values
+#' @param time: a vector of integer/string values
+#' @description Check if the length of all the values equal to three, we need that in order to know situations where the the leff zero is missing in the time value
+#' @return TRUE when the lenght of all the values equal to three, and FALSE in the otherwise
+#' @export
 isTheLengthOfAllTimeValuesThree <-function(time){
   lengthVector = lapply(X = time, FUN = lengthOfIntegerValue)
   return (all(lengthVector == 3))
