@@ -110,14 +110,7 @@ correctMissingLeftZeroForTime <- function (time){
   return (lapply(X = time, FUN = correctMissingLeftZeroForOneValue))
 }
 
-#' Are the values of one vector contained in another vector
-#'
-#' It is like foreign key/primary key validation in relational database.
-#' @param foreignKeys: vector contains the values that we need to validation
-#' @param primaryKeys: vector contains the values that we need to validation throw out
-#' @description Use this function to validation that the values of one vector are already existed in another vector. If this function returns FALSE, you can use the function notExistedValues to see which values are existed in the first vector but not in the second vector
-#' @return  TRUE if all the values of the first vector are included in the second vector, and FALSE in the otherwise case.
-#' @export
+
 areValuesExisted <- function (foriegnKeys, primaryKeys){
   return (all(foriegnKeys %in% primaryKeys))
 }
