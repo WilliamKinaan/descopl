@@ -13,7 +13,7 @@ isCorrectedDate(date)
 TRUE if all the values of the vector have the correct format, and otherwise it returns FALSE
 }
 \description{
-Check if all the values of the input vectors have this format %Y%m%d
+Check if all the values of the input vectors have this format
 }
 \details{
 Input is a vector of integer/string values to be validated
