@@ -2,7 +2,6 @@
 
 export(areValuesExisted)
 export(correctMissingLeftZeroForTime)
-export(doesItContainNullValues)
 export(isCorrectTime)
 export(isCorrectedDate)
 export(isTheLengthOfAllTimeValuesThree)
