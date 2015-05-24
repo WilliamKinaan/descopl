@@ -16,3 +16,5 @@ wrongTimeValues <- wrongTimeValues(time = transactions$Time)
 isTheLengthOfAllTimeValuesThree(wrongTimeValues$WrongValues)
 #To add zeros on the left
 transactions$Time[wrongTimeValues$WrongIndexes] <- correctMissingLeftZeroForTime( time = transactions$Time[wrongTimeValues$WrongIndexes])
+#To check again if the time values have been corrected, and the answer is true
+isCorrectTime(transactions$Time)
