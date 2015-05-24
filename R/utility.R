@@ -1,3 +1,10 @@
+#' Is Correct Date
+#'
+#' Input is a vector of integer/string values to be validated
+#' @param date: a vector of integer/string values
+#' @description Check if all the values of the input vectors have this format
+#' @return TRUE if all the values of the vector have the correct format, and otherwise it returns FALSE
+#' @export 
 isCorrectedDate <- function(date){
   dt <- strptime(date, "%Y%m%d")
   bad <- which(is.na(dt))
