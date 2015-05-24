@@ -73,13 +73,7 @@ lengthOfIntegerValue <- function(oneValue){
   return (nchar(as.character(oneValue)))
 }
 
-#' Is the length of all time values equal to three
-#'
-#' Input is a vector of integer/string values
-#' @param time: a vector of integer/string values
-#' @description Check if the length of all the values equal to three, we need that in order to know situations where the the leff zero is missing in the time value
-#' @return TRUE when the lenght of all the values equal to three, and FALSE in the otherwise
-#' @export
+
 isTheLengthOfAllTimeValuesThree <-function(time){
   lengthVector = lapply(X = time, FUN = lengthOfIntegerValue)
   return (all(lengthVector == 3))
@@ -99,35 +93,16 @@ correctMissingLeftZeroForOneValue <- function (oneValue){
   return (oneValue)
 }
 
-#' Correct the missing zero at the left of a time value
-#'
-#' Input is a vector of integer/string values
-#' @param time: a vector of integer/string values
-#' @description There are some time values have this format 921 which should be 0921 but because it is integer values, the zero on the left will not appear. This function is to handle these cases
-#' @return a vector of CHARACTORS contain the values with the correct format.
-#' @export
+
 correctMissingLeftZeroForTime <- function (time){
   return (lapply(X = time, FUN = correctMissingLeftZeroForOneValue))
 }
 
-#' Are the values of one vector contained in another vector
-#'
-#' It is like foreign key/primary key validation in relational database.
-#' @param foreignKeys: vector contains the values that we need to validation
-#' @param primaryKeys: vector contains the values that we need to validation throw out
-#' @description Use this function to validation that the values of one vector are already existed in another vector. If this function returns FALSE, you can use the function notExistedValues to see which values are existed in the first vector but not in the second vector
-#' @return  TRUE if all the values of the first vector are included in the second vector, and FALSE in the otherwise case.
-#' @export
+
 areValuesExisted <- function (foriegnKeys, primaryKeys){
   return (all(foriegnKeys %in% primaryKeys))
 }
 
-#' Not existed values
-#'
-#' @param foreignKeys: vector contains the values that we need to validation
-#' @param primaryKeys: vector contains the values that we need to validation throw out
-#' @description This function returns the values that exist in the first vector but don't exist in the second one
-#' @export
 notExistedValues <- function(foreignKeys, primaryKeys){
   differencesBooleanVector <- foreignKeys %in% primaryKeys
   return (foreignKeys[!differencesBooleanVector])
