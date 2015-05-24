@@ -139,6 +139,7 @@ notExistedValues <- function(foreignKeys, primaryKeys){
 #' @description check if all the values in the vector are not null
 #' @examples
 #' doesItContainNullValues(c(1:2))
+#' doesItContainNullValues(c(1:2))
 #' @export
 doesItContainNullValues <- function(data){
   booleanVector <- lapply(data, is.na);
