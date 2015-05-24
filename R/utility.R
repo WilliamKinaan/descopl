@@ -133,7 +133,13 @@ notExistedValues <- function(foreignKeys, primaryKeys){
   return (foreignKeys[!differencesBooleanVector])
 }
 
-
+#' Does it contain null values
+#' 
+#' @param data: vector to be checked
+#' @description check if all the values in the vector are not null
+#' @example doesItContainNullValues(c(1:2))
+#' doesItContainNullValues(c(c(1:3), NA))
+#' @export
 doesItContainNullValues <- function(data){
   booleanVector <- lapply(data, is.na);
   return (!all(booleanVector == FALSE))
