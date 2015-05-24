@@ -122,6 +122,12 @@ areValuesExisted <- function (foriegnKeys, primaryKeys){
   return (all(foriegnKeys %in% primaryKeys))
 }
 
+#' Not existed values
+#'
+#' @param foreignKeys: vector contains the values that we need to validation
+#' @param primaryKeys: vector contains the values that we need to validation throw out
+#' @description This function returns the values that exist in the first vector but don't exist in the second one
+#' @export
 notExistedValues <- function(foreignKeys, primaryKeys){
   differencesBooleanVector <- foreignKeys %in% primaryKeys
   return (foreignKeys[!differencesBooleanVector])
