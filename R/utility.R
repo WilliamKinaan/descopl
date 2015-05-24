@@ -1,10 +1,3 @@
-#' Is Correct Date
-#'
-#' Input is a vector of integer/string values to be validated
-#' @param date: a vector of integer/string values
-#' @description Check if all the values of the input vectors have this format
-#' @return TRUE if all the values of the vector have the correct format, and otherwise it returns FALSE
-#' @export 
 isCorrectedDate <- function(date){
   dt <- strptime(date, "%Y%m%d")
   bad <- which(is.na(dt))
@@ -15,13 +8,6 @@ isCorrectedDate <- function(date){
   }
 }
 
-#' Wrong Date Values
-#'
-#' Input is a vector of integer/string values
-#' @param date: a vector of integer/string values
-#' @description Returns the wrong date values and their indexes.
-#' @return a data frame contains two columns; WrongValues is a vector contains the wrong values, and WrongIndexes contains the indexes of the wrong values
-#' @export
 wrongDateValues<-function(date) {
   dt<-strptime(date, "%Y%m%d")
   bad<-which(is.na(dt))
@@ -38,13 +24,6 @@ isCorrectDateTime <- function(dateTime){
   }
 }
 
-#' Is Correct Time
-#'
-#' Input is a vector of integer/string values to be validated
-#' @param time: a vector of integer/string values
-#' @description Check if all the values of the input vectors have this format %H%M
-#' @return TRUE if all the values of the vector have the correct format, and otherwise it returns FALSE
-#' @export 
 isCorrectTime <- function(time){
   dt <- strptime(time, "%H%M")
   bad <- which(is.na(dt))
@@ -56,13 +35,7 @@ isCorrectTime <- function(time){
 }
 
 
-#' Wrong Time Values
-#'
-#' Input is a vector of integer/string values
-#' @param time: a vector of integer/string values
-#' @description Returns the wrong time values and their indexes.
-#' @return a data frame contains two columns; WrongValues is a vector contains the wrong values, and WrongIndexes contains the indexes of the wrong values
-#' @export
+
 wrongTimeValues <- function(time){
   dt<-strptime(time, " %H%M")
   bad<-which(is.na(dt))
@@ -102,6 +75,7 @@ correctMissingLeftZeroForTime <- function (time){
 areValuesExisted <- function (foriegnKeys, primaryKeys){
   return (all(foriegnKeys %in% primaryKeys))
 }
+
 
 notExistedValues <- function(foreignKeys, primaryKeys){
   differencesBooleanVector <- foreignKeys %in% primaryKeys
