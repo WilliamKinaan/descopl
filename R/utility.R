@@ -141,3 +141,14 @@ areThereOutRangedTimeValues <- function (time){
   else
     return (FALSE)
 }
+
+#' Are Unique Values
+#'
+#' To check the uniqueness of the values in a vector.
+#' @param data: vector contains the values that we need to validate
+#' @description Check the uniquness of the values
+#' @return  TRUE TRUE if the values are unique, and FALSE otherwise.
+#' @export
+areUniqueValues <- function(data){
+  return (uniqueEqualTotal <- length(unique(data)) == length(data))
+}
