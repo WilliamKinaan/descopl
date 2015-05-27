@@ -8,6 +8,8 @@ wrongDatesInTransationDataset <- wrongDateValues(date = transactions$Date)
 #To check if all the dates values are correct after removing the wrong values, and the answer is TRUE
 isCorrectedDate(transactions$Date[-wrongDatesInTransationDataset$WrongIndexes])
 
+#To check if there are values less that 900 and greater than 1800 and the answer is FALSE
+areThereOutRangedTimeValues(transactions$Time)
 #To check if all time values are correct, and the answer is FALSE
 isCorrectTime(transactions$Time)
 #To get the wrong time values
