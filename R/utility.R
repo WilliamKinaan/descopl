@@ -150,5 +150,5 @@ areThereOutRangedTimeValues <- function (time){
 #' @return  TRUE TRUE if the values are unique, and FALSE otherwise.
 #' @export
 areUniqueValues <- function(data){
-  return (uniqueEqualTotal <- length(unique(data)) == length(data))
+  return (length(unique(data)) == length(data))
 }
