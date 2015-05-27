@@ -133,3 +133,9 @@ notExistedValues <- function(foreignKeys, primaryKeys){
   return (foreignKeys[!differencesBooleanVector])
 }
 
+areThereOutRangedTimeValues <- function (time){
+  if (any(time < 900 | time > 1800))
+    return (TRUE)
+  else
+    return (FALSE)
+}

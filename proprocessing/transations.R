@@ -18,3 +18,12 @@ isTheLengthOfAllTimeValuesThree(wrongTimeValues$WrongValues)
 transactions$Time[wrongTimeValues$WrongIndexes] <- correctMissingLeftZeroForTime( time = transactions$Time[wrongTimeValues$WrongIndexes])
 #To check again if the time values have been corrected, and the answer is true
 isCorrectTime(transactions$Time)
+
+#To load the cards dataset
+cards <- read.table(file=file.choose(), sep = ",", header = TRUE)
+
+#To check if cardID values in transactions dataset are existed in cards dataset, and the answer is TRUE
+areValuesExisted(transactions$CardID, cards$CardID)
+
+#To check if there are values less that 900 and greater than 1800
+areThereOutRangedTimeValues(transactions$Time)
