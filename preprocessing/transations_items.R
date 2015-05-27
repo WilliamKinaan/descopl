@@ -28,7 +28,8 @@ transationItems$Time[wrongTimeValues$WrongIndexes] <- correctMissingLeftZeroForT
 isCorrectTime(transationItems$Time)
 
 #Load items dataset
-items <- read.csv(file=file.choose(), header =TRUE, sep = ";")
+#be carefull that there are some wrong values in the dataset starts at 302 line.
+items <- read.csv(file=file.choose(), header =TRUE, sep = ";", quote = "'")
 #To check if itemCode values in transactionItems dataset  are existed in items dataset, and the answer is FALSE
 areValuesExisted(transationItems$ItemCode, items$ItemCode)
 #To get the wrong itemCodes, which are codes exist in transationItems dataset but don't exist in items dataset
@@ -37,3 +38,4 @@ wrongItemCodes <- notExistedValues(transationItems$ItemCode, items$ItemCode)
 transationItems <- transationItems[-wrongItemCodes$WrongIndexes]
 #check again if the itemCode values in transactionItems dataset are existed in items dataset, and the answer is TRUE
 areValuesExisted(transationItems$ItemCode, items$ItemCode)
+

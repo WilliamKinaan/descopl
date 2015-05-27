@@ -26,6 +26,3 @@ cards <- read.table(file=file.choose(), sep = ",", header = TRUE)
 
 #To check if cardID values in transactions dataset are existed in cards dataset, and the answer is TRUE
 areValuesExisted(transactions$CardID, cards$CardID)
-
-#To check if there are values less that 900 and greater than 1800
-areThereOutRangedTimeValues(transactions$Time)
