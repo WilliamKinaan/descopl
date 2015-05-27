@@ -12,6 +12,6 @@ notExistedValues(foreignKeys, primaryKeys)
 \item{primaryKeys:}{vector contains the values that we need to validation throw out}
 }
 \description{
-This function returns the values that exist in the first vector but don't exist in the second one
+This function returns a data frame contains the wrong values, whih are the values the exist in the first vector but do not exit in the second vector, and wrong indexes, which are the indexes of the wrong values
 }
 
